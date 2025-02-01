@@ -1,0 +1,23 @@
+def pertence_fibonacci(numero):
+    # Começando a sequência de Fibonacci com 0 e 1
+    fib_anteriores = [0, 1]
+
+    # Enquanto o número informado for maior que o último valor da sequência
+    while fib_anteriores[-1] < numero:
+        # Calcula o próximo número da sequência e adiciona à lista
+        fib_anteriores.append(fib_anteriores[-1] + fib_anteriores[-2])
+    
+    # Verifica se o número informado está na sequência
+    if numero in fib_anteriores:
+        return True
+    else:
+        return False
+
+# Entrada do usuário
+numero = int(input("Informe um número: "))
+
+# Verificação e exibição do resultado
+if pertence_fibonacci(numero):
+    print(f"O número {numero} pertence à sequência de Fibonacci.")
+else:
+    print(f"O número {numero} não pertence à sequência de Fibonacci.")
