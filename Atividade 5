@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class InverterString {
+
+    public static void main(String[] args) {
+        
+        // Criando o Scanner para entrada do usuário
+        Scanner scanner = new Scanner(System.in);
+        
+        // Entrada da string
+        System.out.print("Digite uma string: ");
+        String input = scanner.nextLine();
+        
+        // Chamando a função para inverter a string
+        String resultado = inverterString(input);
+        
+        // Exibindo o resultado
+        System.out.println("String invertida: " + resultado);
+        
+        // Fechando o scanner
+        scanner.close();
+    }
+    
+    // Função que inverte os caracteres de uma string
+    public static String inverterString(String str) {
+        // Convertendo a string para um array de caracteres
+        char[] caracteres = new char[str.length()];
+        
+        // Percorrendo a string de trás para frente e armazenando no array de caracteres
+        int j = 0;
+        for (int i = str.length() - 1; i >= 0; i--) {
+            caracteres[j] = str.charAt(i);
+            j++;
+        }
+        
+        // Convertendo o array de volta para uma string e retornando
+        String resultado = "";
+        for (char c : caracteres) {
+            resultado += c;
+        }
+        
+        return resultado;
+    }
+}
